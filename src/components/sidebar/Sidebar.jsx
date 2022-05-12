@@ -15,12 +15,17 @@ import SettingsApplicationsSharpIcon from '@mui/icons-material/SettingsApplicati
 import FolderSharedSharpIcon from '@mui/icons-material/FolderSharedSharp';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
 
+//react-router-dom links
+import {Link} from "react-router-dom"
+
 const Sidebar = () => {
   return (
     <div className="sidebar">
 
         <div className="top">
+            <Link to="/" style={{textDecoration : "none"}} >
             <span className="logo">Fortnight Admin </span>
+            </Link>
         </div>
         <hr />
 
@@ -32,14 +37,18 @@ const Sidebar = () => {
                     <span>Dashboard</span> 
                 </li>
                 <p className="title">LISTS</p>
+                <Link to="/users" style={{textDecoration : "none"}} >
                 <li>
                     <PersonOutlineOutlinedIcon className="icon" /> 
                     <span>Users</span> 
                 </li>
+                </Link>
+                <Link to="/products" style={{textDecoration : "none"}} >
                 <li>
                     <Inventory2Icon className="icon" /> 
                     <span>Products</span> 
                 </li>
+                </Link>
                 <li>
                     <ShoppingBasketSharpIcon className="icon" /> 
                     <span>Orders</span> 
