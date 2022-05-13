@@ -14,11 +14,14 @@ import MenuBookSharpIcon from '@mui/icons-material/MenuBookSharp';
 import SettingsApplicationsSharpIcon from '@mui/icons-material/SettingsApplicationsSharp';
 import FolderSharedSharpIcon from '@mui/icons-material/FolderSharedSharp';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
+import { DarkModeContext } from "../../context/darkModeContext";
+import { useContext } from "react";
 
 //react-router-dom links
 import {Link} from "react-router-dom"
 
 const Sidebar = () => {
+    const {dispatch} = useContext(DarkModeContext)
   return (
     <div className="sidebar">
 
@@ -93,8 +96,8 @@ const Sidebar = () => {
             </ul>
         </div>
         <div className="bottom">
-            <div className="colorOption"></div>
-            <div className="colorOption"></div>
+            <div className="colorOption" onClick={()=> dispatch({type: "LIGHT"})}></div>
+            <div className="colorOption" onClick={()=> dispatch({type: "DARK"})}></div>
             
         </div>
     
